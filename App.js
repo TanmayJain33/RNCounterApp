@@ -10,22 +10,36 @@ export default function App() {
     <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
       <Text style={{textAlign: 'center', fontSize: 50}}>{counter}</Text>
       <Button
-        title="Increment"
+        title="Increment By 1"
         onPress={() => {
-          setCounter(counter + 1);
+          setCounter(prevCounter => prevCounter + 1);
         }}
       />
       <View style={{margin: 10}} />
       <Button
-        title="Decrement"
+        title="Decrement By 1"
         onPress={() => {
-          setCounter(counter - 1);
+          setCounter(prevCounter => prevCounter - 1);
+        }}
+      />
+      <View style={{margin: 10}} />
+      <Button
+        title="Increment By 5"
+        onPress={() => {
+          setCounter(prevCounter => prevCounter + 5);
+        }}
+      />
+      <View style={{margin: 10}} />
+      <Button
+        title="Decrement By 5"
+        onPress={() => {
+          setCounter(prevCounter => prevCounter - 5);
         }}
       />
       <TouchableOpacity
         style={{marginTop: 20, padding: 10, backgroundColor: buttonColor}}
         onPress={() => {
-          setCounter(0);
+          setCounter(prevCounter => prevCounter - prevCounter);
           setButtonEnabled(!buttonEnabled);
         }}>
         <Text style={{color: 'white', fontWeight: '700'}}>RESET</Text>
