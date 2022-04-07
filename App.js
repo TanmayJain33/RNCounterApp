@@ -1,17 +1,31 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity} from 'react-native';
+import {View, Text, Button, TouchableOpacity, TextInput} from 'react-native';
 
 export default function App() {
   const [counter, setCounter] = useState(0);
   const [buttonEnabled, setButtonEnabled] = useState(true);
   const buttonColor = buttonEnabled ? 'red' : 'blue';
+  const [name, setName] = useState('');
 
   useEffect(() => {
-    console.warn(`Counter value is: ${counter}.`);
-  });
+    console.log('Updating user name');
+    console.log(`Counter value is: ${counter}.`);
+  }, [counter]);
 
   return (
     <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+      <TextInput
+        style={{
+          height: 40,
+          width: 200,
+          margin: 12,
+          borderWidth: 1,
+          padding: 10,
+        }}
+        value={name}
+        placeholder="Enter your name"
+        onChangeText={text => setName(text)}
+      />
       <Text style={{textAlign: 'center', fontSize: 50}}>{counter}</Text>
       <Button
         title="Increment"
