@@ -1,53 +1,18 @@
-import React, {useState, useEffect} from 'react';
-import {View, Text, Button, TouchableOpacity, TextInput} from 'react-native';
+import React, {createContext} from 'react';
+import {View} from 'react-native';
+import ComponentC from './components/ComponentC';
+
+export const UserContext = createContext();
+export const AgeContext = createContext();
 
 export default function App() {
-  const [counter, setCounter] = useState(0);
-  const [buttonEnabled, setButtonEnabled] = useState(true);
-  const buttonColor = buttonEnabled ? 'red' : 'blue';
-  const [name, setName] = useState('');
-
-  useEffect(() => {
-    console.log('Updating user name');
-    console.log(`Counter value is: ${counter}.`);
-  }, [counter]);
-
   return (
-    <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
-      <TextInput
-        style={{
-          height: 40,
-          width: 200,
-          margin: 12,
-          borderWidth: 1,
-          padding: 10,
-        }}
-        value={name}
-        placeholder="Enter your name"
-        onChangeText={text => setName(text)}
-      />
-      <Text style={{textAlign: 'center', fontSize: 50}}>{counter}</Text>
-      <Button
-        title="Increment"
-        onPress={() => {
-          setCounter(counter + 1);
-        }}
-      />
-      <View style={{margin: 10}} />
-      <Button
-        title="Decrement"
-        onPress={() => {
-          setCounter(counter - 1);
-        }}
-      />
-      <TouchableOpacity
-        style={{marginTop: 20, padding: 10, backgroundColor: buttonColor}}
-        onPress={() => {
-          setCounter(0);
-          setButtonEnabled(!buttonEnabled);
-        }}>
-        <Text style={{color: 'white', fontWeight: '700'}}>RESET</Text>
-      </TouchableOpacity>
+    <View>
+      <UserContext.Provider value={'Tanmay'}>
+        <AgeContext.Provider value={22}>
+          <ComponentC />
+        </AgeContext.Provider>
+      </UserContext.Provider>
     </View>
   );
 }
