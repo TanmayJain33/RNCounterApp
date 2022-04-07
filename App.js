@@ -1,37 +1,39 @@
-import React, {useState} from 'react';
-import {View, Text, TextInput} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, Button, TouchableOpacity} from 'react-native';
 
 export default function App() {
-  const [name, setName] = useState({firstName: '', lastName: ''});
+  const [counter, setCounter] = useState(0);
+  const [buttonEnabled, setButtonEnabled] = useState(true);
+  const buttonColor = buttonEnabled ? 'red' : 'blue';
+
+  useEffect(() => {
+    console.warn(`Counter value is: ${counter}.`);
+  });
 
   return (
     <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
-      <TextInput
-        style={{
-          height: 40,
-          width: 200,
-          margin: 12,
-          borderWidth: 1,
-          padding: 10,
+      <Text style={{textAlign: 'center', fontSize: 50}}>{counter}</Text>
+      <Button
+        title="Increment"
+        onPress={() => {
+          setCounter(counter + 1);
         }}
-        value={name.firstName}
-        placeholder="Enter your first name"
-        onChangeText={text => setName({...name, firstName: text})}
       />
-      <TextInput
-        style={{
-          height: 40,
-          width: 200,
-          margin: 12,
-          borderWidth: 1,
-          padding: 10,
+      <View style={{margin: 10}} />
+      <Button
+        title="Decrement"
+        onPress={() => {
+          setCounter(counter - 1);
         }}
-        value={name.lastName}
-        placeholder="Enter your last name"
-        onChangeText={text => setName({...name, lastName: text})}
       />
-      <Text>Your first name is {name.firstName}</Text>
-      <Text>Your last name is {name.lastName}</Text>
+      <TouchableOpacity
+        style={{marginTop: 20, padding: 10, backgroundColor: buttonColor}}
+        onPress={() => {
+          setCounter(0);
+          setButtonEnabled(!buttonEnabled);
+        }}>
+        <Text style={{color: 'white', fontWeight: '700'}}>RESET</Text>
+      </TouchableOpacity>
     </View>
   );
 }
