@@ -1,18 +1,32 @@
-import React, {createContext} from 'react';
-import {View} from 'react-native';
-import ComponentC from './components/ComponentC';
+import React, {useReducer} from 'react';
+import {View, Text, Button} from 'react-native';
 
-export const UserContext = createContext();
-export const AgeContext = createContext();
+const initialState = 0;
+
+const reducerFunction = (currentState, action) => {
+  switch (action) {
+    case 'increment':
+      return currentState + 1;
+    case 'decrement':
+      return currentState - 1;
+    case 'reset':
+      return initialState;
+    default:
+      return currentState;
+  }
+};
 
 export default function App() {
+  const [counter, dispatch] = useReducer(reducerFunction, initialState);
+
   return (
-    <View>
-      <UserContext.Provider value={'Tanmay'}>
-        <AgeContext.Provider value={22}>
-          <ComponentC />
-        </AgeContext.Provider>
-      </UserContext.Provider>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{textAlign: 'center', fontSize: 50}}>{counter}</Text>
+      <Button title="Increment" onPress={() => dispatch('increment')} />
+      <View style={{margin: 10}} />
+      <Button title="Decrement" onPress={() => dispatch('decrement')} />
+      <View style={{margin: 10}} />
+      <Button title="Reset" onPress={() => dispatch('reset')} />
     </View>
   );
 }
