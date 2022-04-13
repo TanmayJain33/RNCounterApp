@@ -1,11 +1,11 @@
 import React from 'react';
 import {View} from 'react-native';
-import ParentComponent from './components/ParentComponent';
+import Counter from './Counter';
 
 export default function App() {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <ParentComponent />
+      <Counter />
     </View>
   );
 }
