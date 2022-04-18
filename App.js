@@ -21,6 +21,8 @@ import UseReducer4 from './screens/useReducer/useReducer4';
 import UseCallbackScreen from './screens/UseCallbackScreen';
 import UseMemoScreen from './screens/UseMemoScreen';
 import UseRefScreen from './screens/UseRefScreen';
+import CustomComponentsScreen from './screens/CustomComponentsScreen';
+import CustomTextScreen from './screens/componentScreen/CustomTextScreen';
 
 const Stack = createStackNavigator();
 
@@ -48,6 +50,11 @@ export default function App() {
         <Stack.Screen name="UseCallbackScreen" component={UseCallbackScreen} />
         <Stack.Screen name="UseMemoScreen" component={UseMemoScreen} />
         <Stack.Screen name="UseRefScreen" component={UseRefScreen} />
+        <Stack.Screen
+          name="CustomComponentsScreen"
+          component={CustomComponentsScreen}
+        />
+        <Stack.Screen name="CustomTextScreen" component={CustomTextScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
