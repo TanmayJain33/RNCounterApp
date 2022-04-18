@@ -23,6 +23,7 @@ import UseMemoScreen from './screens/UseMemoScreen';
 import UseRefScreen from './screens/UseRefScreen';
 import CustomComponentsScreen from './screens/CustomComponentsScreen';
 import CustomTextScreen from './screens/componentScreen/CustomTextScreen';
+import CustomTextInputScreen from './screens/componentScreen/CustomTextInputScreen';
 
 const Stack = createStackNavigator();
 
@@ -55,6 +56,10 @@ export default function App() {
           component={CustomComponentsScreen}
         />
         <Stack.Screen name="CustomTextScreen" component={CustomTextScreen} />
+        <Stack.Screen
+          name="CustomTextInputScreen"
+          component={CustomTextInputScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
