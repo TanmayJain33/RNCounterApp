@@ -25,6 +25,7 @@ import CustomComponentsScreen from './screens/CustomComponentsScreen';
 import CustomTextScreen from './screens/componentScreen/CustomTextScreen';
 import CustomTextInputScreen from './screens/componentScreen/CustomTextInputScreen';
 import CustomButtonScreen from './screens/componentScreen/CustomButtonScreen';
+import CustomAlertScreen from './screens/componentScreen/CustomAlertScreen';
 
 const Stack = createStackNavigator();
 
@@ -65,6 +66,7 @@ export default function App() {
           name="CustomButtonScreen"
           component={CustomButtonScreen}
         />
+        <Stack.Screen name="CustomAlertScreen" component={CustomAlertScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
