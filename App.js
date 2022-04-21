@@ -27,6 +27,7 @@ import CustomTextInputScreen from './screens/componentScreen/CustomTextInputScre
 import CustomButtonScreen from './screens/componentScreen/CustomButtonScreen';
 import CustomAlertScreen from './screens/componentScreen/CustomAlertScreen';
 import CustomModalScreen from './screens/componentScreen/CustomModalScreen';
+import CustomToastScreen from './screens/componentScreen/CustomToastScreen';
 
 const Stack = createStackNavigator();
 
@@ -69,6 +70,7 @@ export default function App() {
         />
         <Stack.Screen name="CustomAlertScreen" component={CustomAlertScreen} />
         <Stack.Screen name="CustomModalScreen" component={CustomModalScreen} />
+        <Stack.Screen name="CustomToastScreen" component={CustomToastScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
