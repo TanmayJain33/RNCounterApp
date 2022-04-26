@@ -15,6 +15,7 @@ export default function CustomTextInput({
   keyboardType,
   editable,
   secureTextEntry,
+  borderColor,
 }) {
   const [focused, setFocused] = useState(false);
 
@@ -42,7 +43,7 @@ export default function CustomTextInput({
   }
 
   return (
-    <View style={{paddingVertical: 12, marginHorizontal: 20}}>
+    <View style={{marginBottom: 20}}>
       {label && <Text>{label}</Text>}
       <View
         style={[
@@ -55,7 +56,7 @@ export default function CustomTextInput({
             marginTop: 5,
             flexDirection: getFlexDirection(),
           },
-          {borderColor: getBorderColor()},
+          {borderColor: borderColor ? borderColor : getBorderColor()},
         ]}>
         <View>{icon && icon}</View>
         <TextInput

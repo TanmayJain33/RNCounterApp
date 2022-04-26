@@ -13,6 +13,7 @@ export default function CustomButton({
   borderColor,
   icon,
   fontSize,
+  style,
 }) {
   return (
     <View>
@@ -20,28 +21,29 @@ export default function CustomButton({
         <View
           style={{
             backgroundColor: type == 'filled' ? btnColor : 'transparent',
-            paddingVertical: 8,
             width: width,
             height: height,
             borderRadius: borderRadius,
             flexDirection: 'row',
-            margin: 10,
             justifyContent: 'center',
             alignItems: 'center',
             borderWidth: type == 'outlined' ? 2 : 0,
             borderColor: type == 'outlined' ? borderColor : null,
+            ...style,
           }}>
-          <View>{icon && icon}</View>
-          <Text
-            style={{
-              color: textColor,
-              fontSize: fontSize,
-              textTransform: 'uppercase',
-              textAlign: 'center',
-              paddingHorizontal: icon ? 10 : 0,
-            }}>
-            {text}
-          </Text>
+          {icon && <View>{icon}</View>}
+          {text && (
+            <Text
+              style={{
+                color: textColor,
+                fontSize: fontSize,
+                textTransform: 'uppercase',
+                textAlign: 'center',
+                paddingHorizontal: icon ? 10 : 0,
+              }}>
+              {text}
+            </Text>
+          )}
         </View>
       </TouchableOpacity>
     </View>

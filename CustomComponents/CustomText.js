@@ -13,7 +13,7 @@ export default function CustomText({
   lineHeight,
 }) {
   return (
-    <View style={{flex: 1, justifyContent: 'center'}}>
+    <View style={{justifyContent: 'center'}}>
       <Text
         style={{
           textAlign: textAlign,

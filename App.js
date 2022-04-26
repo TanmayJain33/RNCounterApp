@@ -30,6 +30,8 @@ import CustomModalScreen from './screens/componentScreen/CustomModalScreen';
 import CustomToastScreen from './screens/componentScreen/CustomToastScreen';
 import CustomCardScreen from './screens/componentScreen/CustomCardScreen';
 import CustomImageGalleryScreen from './screens/componentScreen/CustomImageGalleryScreen';
+import CustomUIScreen from './screens/CustomUIScreen';
+import LoginUIScreen from './screens/customUIScreen/LoginUIScreen';
 
 const Stack = createStackNavigator();
 
@@ -78,6 +80,8 @@ export default function App() {
           name="CustomImageGalleryScreen"
           component={CustomImageGalleryScreen}
         />
+        <Stack.Screen name="CustomUIScreen" component={CustomUIScreen} />
+        <Stack.Screen name="LoginUIScreen" component={LoginUIScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
