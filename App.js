@@ -32,6 +32,7 @@ import CustomCardScreen from './screens/componentScreen/CustomCardScreen';
 import CustomImageGalleryScreen from './screens/componentScreen/CustomImageGalleryScreen';
 import CustomUIScreen from './screens/CustomUIScreen';
 import LoginUIScreen from './screens/customUIScreen/LoginUIScreen';
+import BookStoreUIScreen from './screens/customUIScreen/BookStoreUIScreen';
 
 const Stack = createStackNavigator();
 
@@ -82,6 +83,7 @@ export default function App() {
         />
         <Stack.Screen name="CustomUIScreen" component={CustomUIScreen} />
         <Stack.Screen name="LoginUIScreen" component={LoginUIScreen} />
+        <Stack.Screen name="BookStoreUIScreen" component={BookStoreUIScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

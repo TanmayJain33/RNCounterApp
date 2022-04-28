@@ -28,6 +28,23 @@ export default function CustomUIScreen({navigation}) {
           backgroundColor: '#000',
         }}
       />
+      <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
+        <Text style={{fontSize: 20, fontWeight: '700', color: '#000'}}>
+          Book Store UI
+        </Text>
+        <TouchableOpacity
+          style={{
+            margin: 5,
+            marginLeft: 10,
+            backgroundColor: '#605ff0',
+            borderRadius: 40,
+          }}
+          onPress={() => navigation.navigate('BookStoreUIScreen')}>
+          <Text style={{fontSize: 15, color: '#fff', padding: 10}}>
+            Click Here
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

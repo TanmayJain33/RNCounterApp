@@ -14,6 +14,7 @@ export default function CustomButton({
   icon,
   fontSize,
   style,
+  textTransform,
 }) {
   return (
     <View>
@@ -37,7 +38,7 @@ export default function CustomButton({
               style={{
                 color: textColor,
                 fontSize: fontSize,
-                textTransform: 'uppercase',
+                textTransform: textTransform,
                 textAlign: 'center',
                 paddingHorizontal: icon ? 10 : 0,
               }}>
