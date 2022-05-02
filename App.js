@@ -35,6 +35,7 @@ import LoginUIScreen from './screens/customUIScreen/LoginUIScreen';
 import BookStoreUIScreen from './screens/customUIScreen/BookStoreUIScreen';
 import CustomHooksScreen from './screens/CustomHooksScreen';
 import UseDocumentTitleHook from './screens/customHooksScreen/useDocumentTitleHook';
+import UseCounterHook from './screens/customHooksScreen/useCounterHook';
 
 const Stack = createStackNavigator();
 
@@ -91,6 +92,7 @@ export default function App() {
           name="UseDocumentTitleHook"
           component={UseDocumentTitleHook}
         />
+        <Stack.Screen name="UseCounterHook" component={UseCounterHook} />
       </Stack.Navigator>
     </NavigationContainer>
   );
