@@ -33,6 +33,8 @@ import CustomImageGalleryScreen from './screens/componentScreen/CustomImageGalle
 import CustomUIScreen from './screens/CustomUIScreen';
 import LoginUIScreen from './screens/customUIScreen/LoginUIScreen';
 import BookStoreUIScreen from './screens/customUIScreen/BookStoreUIScreen';
+import CustomHooksScreen from './screens/CustomHooksScreen';
+import UseDocumentTitleHook from './screens/customHooksScreen/useDocumentTitleHook';
 
 const Stack = createStackNavigator();
 
@@ -84,6 +86,11 @@ export default function App() {
         <Stack.Screen name="CustomUIScreen" component={CustomUIScreen} />
         <Stack.Screen name="LoginUIScreen" component={LoginUIScreen} />
         <Stack.Screen name="BookStoreUIScreen" component={BookStoreUIScreen} />
+        <Stack.Screen name="CustomHooksScreen" component={CustomHooksScreen} />
+        <Stack.Screen
+          name="UseDocumentTitleHook"
+          component={UseDocumentTitleHook}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
