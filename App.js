@@ -36,6 +36,7 @@ import BookStoreUIScreen from './screens/customUIScreen/BookStoreUIScreen';
 import CustomHooksScreen from './screens/CustomHooksScreen';
 import UseDocumentTitleHook from './screens/customHooksScreen/useDocumentTitleHook';
 import UseCounterHook from './screens/customHooksScreen/useCounterHook';
+import UseInputHook from './screens/customHooksScreen/useInputHook';
 
 const Stack = createStackNavigator();
 
@@ -93,6 +94,7 @@ export default function App() {
           component={UseDocumentTitleHook}
         />
         <Stack.Screen name="UseCounterHook" component={UseCounterHook} />
+        <Stack.Screen name="UseInputHook" component={UseInputHook} />
       </Stack.Navigator>
     </NavigationContainer>
   );
