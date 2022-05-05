@@ -38,6 +38,7 @@ import UseDocumentTitleHook from './screens/customHooksScreen/useDocumentTitleHo
 import UseCounterHook from './screens/customHooksScreen/useCounterHook';
 import UseInputHook from './screens/customHooksScreen/useInputHook';
 import UseColorPickerHook from './screens/customHooksScreen/useColorPickerHook';
+import UseFetchHook from './screens/customHooksScreen/useFetchHook';
 
 const Stack = createStackNavigator();
 
@@ -100,6 +101,7 @@ export default function App() {
           name="UseColorPickerHook"
           component={UseColorPickerHook}
         />
+        <Stack.Screen name="UseFetchHook" component={UseFetchHook} />
       </Stack.Navigator>
     </NavigationContainer>
   );
